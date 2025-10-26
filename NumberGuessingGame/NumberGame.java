@@ -8,6 +8,7 @@ public class NumberGame {
 		int k = 5;
 		System.out.println("A number choose between 1 to 100");
 		System.out.println("you have" + k + "attemps to correct the guess number" );
+		try{
 		for(int i=0;i<k;i++) {
 			System.out.println("enter your guess number: ");
 			int guess = sc.nextInt();
@@ -23,6 +24,12 @@ public class NumberGame {
 				System.out.println("the number is smaller than " + guess);
 			}
 		}
+		}catch(Exception e){
+			e.printStackTrace();}
+		finally {
+			System.out.println("Finally block");
+		}
+		
 		System.out.println("you have exhausted all attemps. the correct number was " + number);
 		sc.close();
 	}
@@ -30,3 +37,4 @@ public static void main(String[] args) {
 	gussingNumberGame();
 }
 }
+
